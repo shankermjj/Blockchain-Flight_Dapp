@@ -1,0 +1,30 @@
+.section { margin: 20px; }
+body {   font-family: Arial;    }
+    .section {      margin: 20px;    }
+    button {      padding: 5px 16px;      border-radius: 4px;    }
+    button#changeTime { background-color: yellow; }
+    button#bookTicket,button#buyTickets { background-color: #98fb98; }
+    button#refundTicket { background-color: pink; }
+    button#createWallet { background-color: #add8e6; }
+    button#destroyContract { background-color: pink; }
+    #seed {color: green;}
+    .left{width:40%;float:left}
+    .right,.middle{width:20%;float:left}
+    .clear{clear:both}
+   .accounts td,.accounts th{border: 1px solid;padding: 5px;font-size:14px}
+ table.accounts {    border: 1px solid;}
+.bookticket-left,
+.bookticket-right{float:left;width:65%}
+.bookticket-left{width:35%}
+.inumber{color:#A52A2A;font-weight:bold;  font-size: 16px;}
+
+.box1 {
+    background-color: lightgrey;
+    width: 1100px;
+    border: 3px solid #008080;
+    padding: 3px;
+    margin: 10px;
+    margin-left:1%;
+    margin-right:1%;
+
+}

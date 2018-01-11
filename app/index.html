@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Airline DApp</font></h1>
+  <div class="section">
+        <div class="left"><b>Contract deployed at: </b><div id="flightAddress"></div></div>
+    <div class="middle"><b>Contract Balance: </b><div class="inumber" id="flightBalance">0</div></div>
+  </div>
+  <div class="clear"></div>
+  <div class="section">
+    
+        <div class="left"><b>AirlineOwner : </b><div id="airlineOwner" ></div></div>
+    <div class="middle">AirlineOwner Balance: <div class="inumber"  id="airline_owner">0</div></div>
+  </div>
+<div class="section">
+    passengerCount: <span id="passengerCount" class="inumber">0</span>
+  </div>
+<br/>
+  <div class="clear"></div>
+    <hr/>
+  <div class="section">
+    <div class="bookticket-left">
+    <h2>Book a Ticket</h2>
+    <table>
+        <tr><td>Ticket Price: </td><td><input type="text"  class="inumber" id="ticketPrice" value="1.00" readonly/> </td></tr>
+        <tr><td>Buyer Address: </td><td><input type="text" id="buyerAddress" /></td></tr>
+        <tr><td></td><td ><button id="bookTicket">Book Ticket</button></td></tr>
+</table>
+    <span id="bookTicketResult"></span>
+</div>
+<div class="bookticket-right">
+<table BORDER=5 BORDERCOLOR=purple /> 
+    <tr><th>Accounts</th><th>Initial Bal</th><th>Current Bal</th></tr>
+        <tr ><td>Account1 (<span class="acc1Address"></span>) </td><td> <span class="inumber" id="acc1Balance">0</span></td>
+    <td> <span class="inumber" id="acc1Balance-curr">0</span></td></tr>
+    <tr ><td>Account2 (<span class="acc2Address"></span>) </td><td> <span class="inumber" id="acc2Balance">0</span></td>
+    <td> <span class="inumber" id="acc2Balance-curr">0</span></td></tr>
+    <tr ><td>Account3 (<span class="acc3Address"></span>) </td><td> <span class="inumber" id="acc3Balance">0</span></td>
+    <td> <span class="inumber" id="acc3Balance-curr">0</span></td></tr>
+    <tr ><td>Account4 (<span class="acc4Address"></span>) </td><td> <span class="inumber" id="acc4Balance">0</span></td>
+    <td> <span class="inumber" id="acc4Balance-curr">0</span></td></tr>
+    <tr ><td>Account5 (<span class="acc5Address"></span>) </td><td> <span class="inumber" id="acc5Balance">0</span></td>
+    <td> <span class="inumber" id="acc5Balance-curr">0</span></td></tr>
+  </table><br/>
+</div>
+  </div>
+  <div class="clear"></div>
+<hr/>
+
+<div class="section">
+    <h2>Departure</h2>
+<table>
+        <tr><td>flightscheduledDepartTime: </td><td><span class="inumber" id="scheduledDepartTime"></span> </td></tr>
+        <tr><td>actualDepartTime:</td><td> <input type="text" class="inumber" id="actualDepartTime" /></td></tr>
+        <tr><td></td><td >      <button id="changeTime">Change</button></td></tr>
+    </table>
+
+      <span id="changeTimeResult"></span>
+  </div>
+<hr/>
+  <div class="section">
+    <h2>Destroy Contract</h2>
+  <h5>(Each passinger should get 50% of paid, owner will get 50% of contract)</h5>
+      <button id="destroyContract">Destroy Contract</button>
+      <span id="destroyContractResult"></span>
+<br/><br/>
+
+  </div>
+  <hr/>
+<div class="box">
+<footer><center><b>Copyright &copy; 2018-19 <font color=" #21618c "> SONET Team(sha)</font></b>, All rights reserved.</center></footer>
+</div>
+</body>
+</html>
+
