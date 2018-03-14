@@ -20,8 +20,16 @@ var flight;
 
 
 function getBalance(address) {
-    return web3.fromWei(web3.eth.getBalance(address).toNumber(), 'ether');
+  return new Promise (function (resolve, reject) {
+    web3.eth.getBalance(address, function (error, result) {
+      if (error) {
+reject(error); }
+	else {
+ resolve(web3.fromWei(result.toNumber(), 'Wei'));   }
+  })
+})
 }
+
 window.App = {
     start: function() {
         var self = this;
@@ -38,24 +46,7 @@ window.App = {
             }
             accounts = accs;
 
-            $("#airline_owner").html(getBalance(accounts[0]));
-            $(".acc1Address").text(web3.eth.accounts[1]);
-            $(".acc2Address").text(web3.eth.accounts[2]);
-            $(".acc3Address").text(web3.eth.accounts[3]);
-            $(".acc4Address").text(web3.eth.accounts[4]);
-            $(".acc5Address").text(web3.eth.accounts[5]);
-
-    $("#acc1Balance").text(getBalance(web3.eth.accounts[1]));
-            $("#acc2Balance").text(getBalance(web3.eth.accounts[2]));
-            $("#acc3Balance").text(getBalance(web3.eth.accounts[3]));
-    $("#acc4Balance").text(getBalance(web3.eth.accounts[4]));
-            $("#acc5Balance").text(getBalance(web3.eth.accounts[5]));
-
-        $("#acc1Balance-curr").text(getBalance(web3.eth.accounts[1]));
-        $("#acc2Balance-curr").text(getBalance(web3.eth.accounts[2]));
-        $("#acc3Balance-curr").text(getBalance(web3.eth.accounts[3]));
-        $("#acc4Balance-curr").text(getBalance(web3.eth.accounts[4]));
-        $("#acc5Balance-curr").text(getBalance(web3.eth.accounts[5]));
+            
 
             self.initializeFlight();
         });
